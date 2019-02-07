@@ -41,7 +41,8 @@ CREATE TABLE public.marcador (
     idmarcador integer NOT NULL,
     descripcion text NOT NULL,
     latitud double precision NOT NULL,
-    longitud double precision NOT NULL
+    longitud double precision NOT NULL,
+    iduser integer NOT NULL
 );
 
 
@@ -124,7 +125,7 @@ ALTER TABLE ONLY public.usuario ALTER COLUMN idusuario SET DEFAULT nextval('publ
 -- Data for Name: marcador; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.marcador (idmarcador, descripcion, latitud, longitud) FROM stdin;
+COPY public.marcador (idmarcador, descripcion, latitud, longitud, iduser) FROM stdin;
 \.
 
 
@@ -133,7 +134,6 @@ COPY public.marcador (idmarcador, descripcion, latitud, longitud) FROM stdin;
 --
 
 COPY public.usuario (idusuario, nombre, correo, contrasenia, fechanacimiento) FROM stdin;
-1	Mauricio	correo@correo.com	contrasenia	1996-03-07
 \.
 
 
@@ -148,7 +148,7 @@ SELECT pg_catalog.setval('public.marcador_idmarcador_seq', 1, false);
 -- Name: usuario_idusuario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.usuario_idusuario_seq', 1, true);
+SELECT pg_catalog.setval('public.usuario_idusuario_seq', 1, false);
 
 
 --
@@ -165,6 +165,14 @@ ALTER TABLE ONLY public.marcador
 
 ALTER TABLE ONLY public.usuario
     ADD CONSTRAINT usuario_pkey PRIMARY KEY (idusuario);
+
+
+--
+-- Name: marcador marcador_iduser_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.marcador
+    ADD CONSTRAINT marcador_iduser_fkey FOREIGN KEY (iduser) REFERENCES public.usuario(idusuario);
 
 
 --
