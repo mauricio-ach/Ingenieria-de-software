@@ -1,4 +1,6 @@
-/home/mauricio07/Ingenieria/Mapita/src/main/java/Clases/Marcador.java
-/home/mauricio07/Ingenieria/Mapita/src/main/java/Clases/Usuario.java
-/home/mauricio07/Ingenieria/Mapita/src/main/java/Clases/NewHibernateUtil.java
-/home/mauricio07/Ingenieria/Mapita/src/main/java/Clases/AbstractDAO.java
+/home/mauricio07/Ingenieria/Mapita/src/main/java/lab/mapita/Modelo/MarcadorDAO.java
+/home/mauricio07/Ingenieria/Mapita/src/main/java/lab/mapita/Modelo/UsuarioDAO.java
+/home/mauricio07/Ingenieria/Mapita/src/main/java/lab/mapita/Modelo/Usuario.java
+/home/mauricio07/Ingenieria/Mapita/src/main/java/lab/mapita/Modelo/Marcador.java
+/home/mauricio07/Ingenieria/Mapita/src/main/java/lab/mapita/Modelo/AbstractDAO.java
+/home/mauricio07/Ingenieria/Mapita/src/main/java/lab/mapita/Modelo/HibernateUtil.java
