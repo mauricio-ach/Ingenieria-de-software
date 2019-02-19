@@ -42,7 +42,6 @@ public abstract class AbstractDAO<T> {
             if(tx!=null){
                 tx.rollback();
             }
-            e.printStackTrace();
         }finally{
             session.close();
         }
@@ -64,7 +63,6 @@ public abstract class AbstractDAO<T> {
             if(tx!=null){
                 tx.rollback();
             }
-            e.printStackTrace();
         }finally{
             session.close();
         }
@@ -85,7 +83,6 @@ public abstract class AbstractDAO<T> {
             if(tx!=null){
                 tx.rollback();
             }
-            e.printStackTrace();
         }finally{
             session.close();
         }
