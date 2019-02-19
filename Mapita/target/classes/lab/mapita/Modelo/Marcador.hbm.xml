@@ -5,7 +5,7 @@
   <class name="lab.mapita.Modelo.Marcador" optimistic-lock="version" schema="public" table="marcador">
     <id name="idmarcador" type="int">
       <column name="idmarcador"/>
-      <generator class="assigned"/>
+      <generator class="identity"/>
     </id>
     <many-to-one class="lab.mapita.Modelo.Usuario" fetch="select" name="usuario">
       <column name="iduser" not-null="true"/>
