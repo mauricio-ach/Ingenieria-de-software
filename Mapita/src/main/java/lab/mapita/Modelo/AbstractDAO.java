@@ -20,10 +20,17 @@ public abstract class AbstractDAO<T> {
     
     protected SessionFactory sessionFactory;
     
+    /**
+     * 
+     */
     public AbstractDAO(){
         this.sessionFactory = HibernateUtil.getSessionFactory();
     }
     
+    /**
+     * 
+     * @param obj 
+     */
     protected void save(T obj){
         Session session = this.sessionFactory.openSession();
         Transaction tx = null;
@@ -32,58 +39,107 @@ public abstract class AbstractDAO<T> {
             session.save(obj);
             tx.commit();
         }catch(HibernateException e){
-            if(tx != null){
+            if(tx!=null){
                 tx.rollback();
             }
             e.printStackTrace();
-        } finally{
+        }finally{
+            session.close();
+        }
+    
+    }
+    
+    /**
+     * 
+     * @param obj 
+     */
+    protected void update(T obj){
+        Session session = this.sessionFactory.openSession();
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            session.update(obj);
+            tx.commit();
+        }catch(HibernateException e){
+            if(tx!=null){
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }finally{
             session.close();
         }
     }
     
-    protected void update(T obj){
-        
-    }
-    
-    protected void delete(T obj){}
-    
-    protected T find(Class clazz, int id){
-        T obj = null;
-        Session session = this.sessionFactory.getCurrentSession();
+    /**
+     * 
+     * @param obj 
+     */
+    protected void delete(T obj){
+        Session session = this.sessionFactory.openSession();
         Transaction tx = null;
-        try{    
+        try{
             tx = session.beginTransaction();
-            String hql = "From " + clazz;
-            Query query = session.createQuery(hql);
-            obj = (T)session.get(clazz, id);
+            session.delete(obj);
             tx.commit();
-        }catch(HibernateException e) {
-            if(tx != null){
+        }catch(HibernateException e){
+            if(tx!=null){
                 tx.rollback();
             }
-        } finally {
+            e.printStackTrace();
+        }finally{
             session.close();
-        }    
-        return obj;
+        }
     }
-    
-    protected List<T> findAll(Class clazz){
-        List<T> obj = null;
+    /**
+     * 
+     * @param clazz
+     * @param id
+     * @return 
+     */
+    protected T find(Class clazz, int id){
+        T obj =null;
         Session session = this.sessionFactory.getCurrentSession();
         Transaction tx = null;
-        try{    
+        try{
             tx = session.beginTransaction();
-            String hql = "From " + clazz;
+            obj =(T)session.get(clazz, id);
+            tx.commit();
+            
+        }catch(HibernateException e){
+            if(tx!=null){
+                tx.rollback();
+            }
+        }finally{
+            session.close();
+        
+        }
+        return obj;
+        
+    }
+    /**
+     * 
+     * @param clazz
+     * @return 
+     */
+    protected List<T> findAll(Class clazz){
+        List<T> obj =null;
+        Session session = this.sessionFactory.getCurrentSession();
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            String hql = "From"+clazz;
             Query query = session.createQuery(hql);
             obj = (List<T>)query.list();
             tx.commit();
-        }catch(HibernateException e) {
-            if(tx != null){
+            
+        }catch(HibernateException e){
+            if(tx!=null){
                 tx.rollback();
             }
-        } finally {
+        }finally{
             session.close();
-        }    
+        
+        }
         return obj;
     }    
 }
