@@ -12,11 +12,12 @@
         </h:head>
         <h:body>
             <h:form>
-                <p:inputText id="nombre" value="#{agregaUsuario.nombre}" placeholder="Nombre"/> <br/><br/>
-                <p:inputText id="correo" value="#{agregaUsuario.correo}" placeholder="Correo"/> <br/><br/>
-                <p:password id="contrasenia" value="#{agregaUsuario.contrasenia}" placeholder="Contraseña"/> <br/><br/>
-                <p:calendar id="fecha" value="#{agregaUsuario.fechanacimiento}" placeholder="Fecha de nacimiento"/> <br/><br/>
-                <p:commandButton action="#{agregaUsuario.agregaUsuario()}" value="Registrar" ajax="false"/> 
+                <p:inputNumber id="idusuario" placeholder="ID Usuario"/><br/><br/>
+                <p:inputText id="nombre" value="#{actualizaUsuario.nombre}" placeholder="Nombre"/> <br/><br/>
+                <p:inputText id="correo" value="#{actualizaUsuario.correo}" placeholder="Correo"/> <br/><br/>
+                <p:password id="contrasenia" value="#{actualizaUsuario.contrasenia}" placeholder="Contraseña"/> <br/><br/>
+                <p:calendar id="fecha" value="#{actualizaUsuario.fechanacimiento}" placeholder="Fecha de nacimiento"/> <br/><br/>
+                <p:commandButton action="#{actualizaUsuario.actualizarUsuario(idusuario)}" value="Actualizar" ajax="false"/> 
             </h:form>
         </h:body>
     </f:view>

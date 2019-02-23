@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab.mapita.controlador;
+
+import java.util.Date;
+import javax.faces.bean.ManagedBean;
+import lab.mapita.Modelo.Usuario;
+import lab.mapita.Modelo.UsuarioDAO;
+
+/**
+ *
+ * @author mauricio07
+ */
+@ManagedBean
+public class ActualizaUsuario {
+    
+    private String nombre;
+    private String correo;
+    private String contrasenia;
+    private Date fechanacimiento;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
+    public Date getFechanacimiento() {
+        return fechanacimiento;
+    }
+
+    public void setFechanacimiento(Date fechanacimiento) {
+        this.fechanacimiento = fechanacimiento;
+    }
+    
+    public void actualizarUsuario(int idusuario) {
+        UsuarioDAO udb = new UsuarioDAO();
+        Usuario u = udb.find(idusuario);
+        u.setNombre(nombre);
+        u.setCorreo(correo);
+        u.setContrasenia(contrasenia);
+        u.setFechanacimiento(fechanacimiento);
+        udb.update(u);
+    }
+}
