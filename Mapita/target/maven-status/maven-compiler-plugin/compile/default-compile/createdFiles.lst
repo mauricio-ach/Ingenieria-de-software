@@ -1,8 +1,11 @@
-lab/mapita/Modelo/Marcador.class
+lab/mapita/controlador/ControladorSesion.class
 lab/mapita/controlador/AgregaUsuario.class
+lab/mapita/Modelo/UsuarioDAO.class
+lab/mapita/Modelo/AbstractDAO.class
+lab/mapita/controlador/FilterSession.class
+lab/mapita/controlador/BuscaPorNombre.class
+lab/mapita/Modelo/Marcador.class
 lab/mapita/Modelo/HibernateUtil.class
 lab/mapita/Modelo/MarcadorDAO.class
 lab/mapita/controlador/ActualizaUsuario.class
-lab/mapita/Modelo/UsuarioDAO.class
 lab/mapita/Modelo/Usuario.class
-lab/mapita/Modelo/AbstractDAO.class
