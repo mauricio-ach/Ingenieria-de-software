@@ -16,7 +16,14 @@
                 <p:inputText id="correo" value="#{agregaUsuario.correo}" placeholder="Correo"/> <br/><br/>
                 <p:password id="contrasenia" value="#{agregaUsuario.contrasenia}" placeholder="Contraseña"/> <br/><br/>
                 <p:calendar id="fecha" value="#{agregaUsuario.fechanacimiento}" placeholder="Fecha de nacimiento"/> <br/><br/>
-                <p:commandButton action="#{agregaUsuario.agregaUsuario()}" value="Registrar" ajax="false"/> 
+                <p:commandButton action="#{agregaUsuario.agregaUsuario()}" value="Registrar" ajax="false"/>  <br/> <br/> <br/>
+                
+                <p:inputText id="idA" value="#{actualizaUsuario.idusuario}" placeholder="ID Usuario" /> <br/><br/>
+                <p:inputText id="nombreA" value="#{actualizaUsuario.nombre}" placeholder="Nombre"/> <br/><br/>
+                <p:inputText id="correoA" value="#{actualizaUsuario.correo}" placeholder="Correo"/> <br/><br/>
+                <p:password id="contraseniaA" value="#{actualizaUsuario.contrasenia}" placeholder="Contraseña"/> <br/><br/>
+                <p:calendar id="fechaA" value="#{actualizaUsuario.fechanacimiento}" placeholder="Fecha de nacimiento"/> <br/><br/>
+                <p:commandButton action="#{actualizaUsuario.actualizarUsuario()}" value="Actualizar" ajax="false"/> 
             </h:form>
         </h:body>
     </f:view>

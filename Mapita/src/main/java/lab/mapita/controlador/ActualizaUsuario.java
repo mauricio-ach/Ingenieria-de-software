@@ -17,10 +17,19 @@ import lab.mapita.Modelo.UsuarioDAO;
 @ManagedBean
 public class ActualizaUsuario {
     
+    private String idusuario;
     private String nombre;
     private String correo;
     private String contrasenia;
     private Date fechanacimiento;
+
+    public String getIdusuario() {
+        return idusuario;
+    }
+
+    public void setIdusuario(String idusuario) {
+        this.idusuario = idusuario;
+    }
 
     public String getNombre() {
         return nombre;
@@ -54,9 +63,10 @@ public class ActualizaUsuario {
         this.fechanacimiento = fechanacimiento;
     }
     
-    public void actualizarUsuario(int idusuario) {
+    public void actualizarUsuario() {
+        int id = Integer.valueOf(idusuario);
         UsuarioDAO udb = new UsuarioDAO();
-        Usuario u = udb.find(idusuario);
+        Usuario u = udb.find(id);
         u.setNombre(nombre);
         u.setCorreo(correo);
         u.setContrasenia(contrasenia);
