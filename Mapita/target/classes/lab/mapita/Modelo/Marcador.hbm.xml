@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 6/02/2019 11:10:24 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="lab.mapita.Modelo.Marcador" optimistic-lock="version" schema="public" table="marcador">
+  <class name="is.lab.mapita.modelo.Marcador" optimistic-lock="version" schema="public" table="marcador">
     <id name="idmarcador" type="int">
       <column name="idmarcador"/>
       <generator class="identity"/>
     </id>
-    <many-to-one class="lab.mapita.Modelo.Usuario" fetch="select" name="usuario">
+    <many-to-one class="is.lab.mapita.modelo.Usuario" fetch="select" name="usuario">
       <column name="iduser" not-null="true"/>
     </many-to-one>
     <property name="descripcion" type="string">

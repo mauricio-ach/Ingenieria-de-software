@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 6/02/2019 11:10:24 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="lab.mapita.Modelo.Usuario" optimistic-lock="version" schema="public" table="usuario">
+  <class name="is.lab.mapita.modelo.Usuario" optimistic-lock="version" schema="public" table="usuario">
     <id name="idusuario" type="int">
       <column name="idusuario"/>
       <generator class="identity"/>
@@ -23,7 +23,7 @@
       <key>
         <column name="iduser" not-null="true"/>
       </key>
-      <one-to-many class="lab.mapita.Modelo.Marcador"/>
+      <one-to-many class="is.lab.mapita.modelo.Marcador"/>
     </set>
   </class>
 </hibernate-mapping>
