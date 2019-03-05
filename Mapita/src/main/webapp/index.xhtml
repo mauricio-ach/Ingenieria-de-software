@@ -34,6 +34,14 @@
                 </section>
                 <aside>
                     <h2>
+                        Inicia Sesión
+                    </h2>
+                    <h:form>
+                        <p:inputText id="correo" value="#{controladorSesion.correo}" placeholder="Correo"/> <br/><br/>
+                        <p:password id="contrasenia" value="#{controladorSesion.contrasesnia}" placeholder="Contrasenia"/> <br/><br/>
+                        <p:commandButton action="#{controladorSesion.login()}" value="Aceptar"/> <br/> <br/>
+                    </h:form>
+                    <h2>
                         Registrate
                     </h2>
                     <h:form>
