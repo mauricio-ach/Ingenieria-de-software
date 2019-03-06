@@ -5,6 +5,7 @@
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/ControladorSesion.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/modelo/HibernateUtil.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/modelo/MarcadorDAO.java
+/home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/ConsultarMarcador.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/FilterSession.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/BuscaPorNombre.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/AgregaMarcador.java
@@ -12,6 +13,5 @@
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/modelo/Usuario.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/modelo/UsuarioDAO.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/ActualizaUsuario.java
-/home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/modelo/ConsultarMarcador.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/ConsultarUsuario.java
 /home/mauricio07/Ingenieria/Mapita/src/main/java/is/lab/mapita/controlador/ActualizaMarcador.java

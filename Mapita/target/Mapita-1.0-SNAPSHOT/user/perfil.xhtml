@@ -16,6 +16,49 @@ and open the template in the editor.
             <h:outputStylesheet name="css/estilos.css"/>
         </h:head>
         <h:body>
+             <h2>
+                Elimina Marcador
+            </h2>
+            <h:form>
+                <p:inputNumber id="idmarcador" value="#{eliminaMarcador.idmarcador}" placeholder="Ingresa el id marcador"/><br/>
+                <p:commandButton action="#{eliminaMarcador.eliminaMarcador()}" value="Eliminar" ajax="false" /><br/>
+            </h:form> 
+            <br/>
+            
+            <h2>
+                Elimina Usuario
+            </h2>
+            <h:form>
+                <p:inputText id="idusuario" value="#{eliminaUsuario.idusuario}" placeholder="id a eliminar"/><br/>
+                <p:commandButton action="#{eliminaUsuario.eliminaUsuario()}" value="Eliminar"/><br/>
+            </h:form>
+            <br/>
+            
+            <h2>
+                Agregar Usuario
+            </h2>
+            <h:form>
+                <p:inputText id="nombre" value="#{agregaUsuario.nombre}" placeholder="Nombre"/> <br/>
+                <p:inputText id="correo" value="#{agregaUsuario.correo}" placeholder="Correo"/> <br/>
+                <p:password id="constrasenia" value="#{agregaUsuario.contrasenia}" placeholder="Contrasenia"/> <br/>
+                <p:calendar id="fechanacimiento" value="#{agregaUsuario.fechanacimiento}" placeholder="Fecha de nacimiento"/> <br/>
+                <p:commandButton action="#{agregaUsuario.agregaUsuario()}" value="Registrame" ajax="false" />  <br/>
+            </h:form>
+            <br/>
+            
+                     
+            <h2>
+                Actualiza Usuario
+            </h2>
+            <h:form>
+                <p:inputText id="idusuario" value="#{actualizaUsuario.idusuario}" placeholder="ID Usuario" /> <br/>
+                <p:inputText id="nombreA" value="#{actualizaUsuario.nombre}" placeholder="Nombre"/> <br/>
+                <p:inputText id="correoA" value="#{actualizaUsuario.correo}" placeholder="Correo"/> <br/>
+                <p:password id="contraseniaA" value="#{actualizaUsuario.contrasenia}" placeholder="Contraseña"/> <br/>
+                <p:calendar id="fechaA" value="#{actualizaUsuario.fechanacimiento}" placeholder="Fecha de nacimiento"/> <br/>
+                <p:commandButton action="#{actualizaUsuario.actualizarUsuario()}" value="Actualizar" ajax="false"/> 
+            </h:form> <br/> <br/>
+            <p:commandButton id="cerrarsesion" action="#{controladorSesion.logout()}" value="Cerrar Sesión"/>
             
         </h:body>
     </f:view>

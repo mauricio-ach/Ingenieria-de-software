@@ -77,3 +77,9 @@ main>aside{
 header>h1{
     float: left;
 }
+
+#cerrarsesion {
+    border-radius: 50px;
+    color: white;
+    background-color: red;
+}
